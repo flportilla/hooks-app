@@ -1,0 +1,33 @@
+import React, { useState, useMemo } from 'react'
+import { } from 'react'
+import { useCounter } from '../hooks'
+
+export const MemoHook = () => {
+
+    const { increment, counter } = useCounter(1)
+    const [show, setShow] = useState(true)
+
+    return (
+        <>
+            <h1>Counter: <small>{counter}</small></h1>
+            <hr />
+
+            <button
+                className="btn btn-primary"
+                type="button"
+                onClick={() => increment()}
+            >
+                +1
+            </button>
+
+            <button
+                className="btn btn-outline-primary"
+                type="button"
+                onClick={() => setShow(!show)}
+            >
+                Show/Hide: {JSON.stringify(show)}
+            </button>
+
+        </>
+    )
+}
